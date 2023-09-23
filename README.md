@@ -2,7 +2,7 @@
 
 MoveApps
 
-Github repository: [https://github.com/vee-jain/KDE_intervals-MoveApps.git](https://github.com/vee-jain/KDE_Intervals-MoveApps)
+Github repository: (https://github.com/vee-jain/KDE_Intervals-MoveApps)
 
 ## Description
 This app generates Kernel Density Estimations (KDE) at user-defined time intervals (i.e., weekly or monthly). The app visualizes KDE patterns over time and in maps along with the raw tracking data
