@@ -94,7 +94,7 @@ rFunction = function(data, interval_option, ...) {
             labs(color = "KDE measure") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)))
   }
   
-  if(interval_option == "monthyl"){
+  if(interval_option == "monthly"){
     kde_time_plts <- hr_all %>% 
       arrange(id,year, interval) %>%
       mutate(id = as.factor(id)) %>%
