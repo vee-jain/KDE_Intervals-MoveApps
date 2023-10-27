@@ -47,6 +47,9 @@
       {
         "name": "RColorBrewer"
       },
+	{
+        "name": "leafsync"
+      },
       {
         "name": "zip"
       }
