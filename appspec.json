@@ -52,6 +52,9 @@
       },
       {
         "name": "zip"
+      },
+	    {
+        "name": "webshot"
       }
 	]
   },
