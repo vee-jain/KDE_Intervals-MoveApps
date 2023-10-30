@@ -9,6 +9,7 @@ library('mapview')
 library('RColorBrewer')
 library('leafsync')
 library('zip')
+library('webshot')
 
 ## The parameter "data" is reserved for the data object passed on from the previous app
 # to display messages to the user in the log file of the App in MoveApps
