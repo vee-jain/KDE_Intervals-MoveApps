@@ -113,16 +113,13 @@ rFunction = function(data, interval_option, ...) {
   }
   
   #' Output 1: export KDE by interval
-  pdf(file = paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"),"kde_time_plots.pdf"),
-      onefile = TRUE)
-  print(kde_time_plts)
+  pdf(appArtifactPath("kde_time_plots.pdf"),onefile = TRUE)
+  walk(kde_time_plts, print)
   dev.off()
   
   #' Output 2: export KDE by interval as csv
   kde_df <- hr_all %>% dplyr::select(-c(info, hr_kde, row))
-  write.csv(kde_df, 
-            file = paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"),"kde_df.csv"),
-            row.names = FALSE)
+  write.csv(kde_df, file = appArtifactPath("kde_df.csv"), row.names = FALSE)
   
   ####----KDE maps----####
   #' Create spatial object for points 
@@ -175,7 +172,7 @@ rFunction = function(data, interval_option, ...) {
   mapshot(m1, url = file.path(targetDirHtmlFiles, paste0("map_core_plot.html")))
   mapshot(m2, url = file.path(targetDirHtmlFiles, paste0("map_range_plot.html")))
   
-  zip_file <- paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"),"map_html_files.zip")
+  zip_file <- appArtifactPath(paste0("map_html_files.zip"))
   zip::zip(zip_file, 
            files = list.files(targetDirHtmlFiles, full.names = TRUE,
                               pattern="^map.*html"),
